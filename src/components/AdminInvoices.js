@@ -6,9 +6,9 @@ const AdminInvoices = () => {
 	const [orders, setOrders] = useState([]);
 	const [totalOrder, setTotalOrder] = useState(0);
 
-	var isAuth = false;
+	// var isAuth = false;
 	var token = localStorage.getItem("tokenStore");
-	if (token) isAuth = true;
+	// if (token) isAuth = true;
 
 	const getOrders = async () => {
 		const res = await axios.get(
@@ -28,7 +28,7 @@ const AdminInvoices = () => {
 
 	useEffect(() => {
 		getOrders();
-	}, []);
+	});
 
 	return (
 		<>

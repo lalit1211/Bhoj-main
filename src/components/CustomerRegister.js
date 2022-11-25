@@ -14,7 +14,7 @@ const CustomerRegister = () => {
 	});
 
 	const [err, setErr] = useState("");
-
+console.log(err);
 	const navigate = useNavigate();
 
 	const onChangeInput = (e) => {
@@ -52,7 +52,7 @@ const CustomerRegister = () => {
 	const registerSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const res = await axios.post(
+			await axios.post(
 				"https://bhoj-server.herokuapp.com/api/auth/register",
 				{
 					username: user.username,

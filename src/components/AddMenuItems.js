@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AdminNavbar from "./AdminNavbar";
 
 const AddMenuItems = () => {
-	var isAuth = false;
-	var token = localStorage.getItem("tokenStore");
-	if (token) isAuth = true;
+	// var isAuth = false;
+	// var token = localStorage.getItem("tokenStore");
+	// if (token) isAuth = true;
 
 	const [item, setItem] = useState({
 		title: "",

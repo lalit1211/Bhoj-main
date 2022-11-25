@@ -13,6 +13,7 @@ const CustomerLogin = () => {
 	});
 
 	const [err, setErr] = useState("");
+	console.log(err);
 
 	const navigate = useNavigate();
 

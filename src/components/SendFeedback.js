@@ -36,7 +36,7 @@ const SendFeedback = (props) => {
 	const feedbackSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const res = await axios.post(
+			await axios.post(
 				"https://bhoj-server.herokuapp.com/api/feedbacks/new",
 				feedbackBody,
 				{ headers: { token: props.token } },

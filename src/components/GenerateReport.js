@@ -5,7 +5,7 @@ import AdminNavbar from "./AdminNavbar";
 
 const GenerateReport = () => {
 	const [orders, setOrders] = useState([]);
-	const [sales, setSales] = useState([]);
+	const [sales] = useState([]);
 	const [totalOrder, setTotalOrder] = useState(0);
 	const [currentIncome, setCurrentIncome] = useState(0);
 	const [prevIncome, setPrevIncome] = useState(0);
@@ -16,9 +16,9 @@ const GenerateReport = () => {
 	if (currentMonth === 1) prevMonth = 12;
 	else prevMonth = currentMonth - 1;
 
-	var isAuth = false;
+	// var isAuth = false;
 	var token = localStorage.getItem("tokenStore");
-	if (token) isAuth = true;
+	// if (token) isAuth = true;
 
 	const getOrders = async () => {
 		const res = await axios.get(
@@ -33,8 +33,8 @@ const GenerateReport = () => {
 		var sum = 0;
 		orders.map((order) => {
 			sum = sum + order.amount;
+			return sum;
 		});
-		return sum;
 	};
 
 	const getSales = async () => {
@@ -66,7 +66,7 @@ const GenerateReport = () => {
 	useEffect(() => {
 		getOrders();
 		getSales();
-	}, []);
+	});
 
 	return (
 		<div className='reports-page'>
@@ -122,6 +122,6 @@ const GenerateReport = () => {
 			)}
 		</div>
 	);
-};
+};;
 
 export default GenerateReport;

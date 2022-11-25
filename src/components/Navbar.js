@@ -31,7 +31,7 @@ function Navbar() {
 	if (token) isAuth = true;
 	else isAuth = false;
 
-	if (isAuth == true) {
+	if (isAuth === true) {
 		var decoded = jwt_decode(token);
 		var username = decoded.name;
 	}
@@ -49,6 +49,7 @@ function Navbar() {
 					<img
 						src={LOGO}
 						className='bhoj-brand'
+						alt='logo'
 					/>
 				</Link>
 			</div>

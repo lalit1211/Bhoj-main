@@ -9,7 +9,7 @@ const Chef = () => {
 	const [orders, setOrders] = useState([]);
 	const [totalOrder, setTotalOrder] = useState(0);
 
-	var isAuth = false;
+	// var isAuth = false;
 	var token = localStorage.getItem("tokenStore");
 
 	const logoutSubmit = () => {
@@ -30,7 +30,7 @@ const Chef = () => {
 	};
 
 	const markAsPrepared = async (orderId) => {
-		const res = await axios.put(
+		await axios.put(
 			`https://bhoj-server.herokuapp.com/api/orders/statusUpdate/${orderId}`,
 			{ status: "prepared" },
 			{ headers: { token: token } },
@@ -55,7 +55,7 @@ const Chef = () => {
 
 	useEffect(() => {
 		getOrders();
-	}, []);
+	});
 
 	return (
 		<>

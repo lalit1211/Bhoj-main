@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 import "../App.css";
 import Navbar from "./Navbar";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 toast.configure();
 
@@ -14,12 +15,13 @@ const Home = () => {
 		isAuth = true;
 	}
 
-	if (isAuth == true) {
+	if (isAuth === true) {
 		var decoded = jwt_decode(token);
 		var id = decoded.id;
 	}
 
 	const [cart, setCart] = useState({});
+	console.log(cart);
 	const [cartUpdated, setCartUpdated] = useState(false);
 	const [items, setItems] = useState([]);
 
@@ -151,14 +153,14 @@ const Home = () => {
 								</h4>
 								<br />
 								<div className='item-btn-container'>
-									<a
+									<Link
 										onClick={() =>
 											addToCart(item)
 										}
 										className='item-btn-add-cart'
 									>
 										ADD TO CART
-									</a>
+									</Link>
 								</div>
 							</div>
 						);

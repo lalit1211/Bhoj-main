@@ -18,7 +18,7 @@ const OrderSuccess = () => {
 
 	useEffect(() => {
 		getOrderSummary();
-	}, []);
+	});
 
 	return (
 		<>

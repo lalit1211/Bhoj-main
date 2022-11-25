@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import AdminNavbar from "./AdminNavbar";
 
 const ManageItems = () => {
-	var isAuth = false;
+	// var isAuth = false;
 	var token = localStorage.getItem("tokenStore");
-	if (token) isAuth = true;
+	// if (token) isAuth = true;
 
 	const [items, setItems] = useState([]);
 
@@ -79,14 +79,14 @@ const ManageItems = () => {
 								>
 									EDIT
 								</Link>
-								<a
+								<Link
 									className='item-btn-dlt'
 									onClick={() =>
 										deleteItem(item._id)
 									}
 								>
 									DELETE
-								</a>
+								</Link>
 							</div>
 						</div>
 					);

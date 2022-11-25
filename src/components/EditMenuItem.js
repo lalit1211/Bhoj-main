@@ -4,9 +4,9 @@ import axios from "axios";
 import AdminNavbar from "./AdminNavbar";
 
 function EditItem({ match }) {
-	var isAuth = false;
-	var token = localStorage.getItem("tokenStore");
-	if (token) isAuth = true;
+	// var isAuth = false;
+	// var token = localStorage.getItem("tokenStore");
+	// if (token) isAuth = true;
 
 	const [item, setItem] = useState({
 		title: "",
@@ -36,7 +36,7 @@ function EditItem({ match }) {
 			}
 		};
 		getItem();
-	}, []);
+	});
 
 	const onChangeInput = (e) => {
 		const { name, value } = e.target;

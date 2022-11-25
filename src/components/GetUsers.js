@@ -23,9 +23,9 @@ const GetUsers = () => {
 		"December",
 	];
 
-	var isAuth = false;
+	// var isAuth = false;
 	var token = localStorage.getItem("tokenStore");
-	if (token) isAuth = true;
+	// if (token) isAuth = true;
 
 	const getUsers = async () => {
 		const res = await axios.get(
@@ -47,7 +47,7 @@ const GetUsers = () => {
 	useEffect(() => {
 		getUsers();
 		getUsersByMonth();
-	}, []);
+	});
 
 	return (
 		<div className='reports-page'>

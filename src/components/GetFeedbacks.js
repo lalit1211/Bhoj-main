@@ -8,9 +8,9 @@ const GetFeedbacks = () => {
 	const [totalFeedbacks, setTotalFeedbacks] = useState(0);
 	const [averageRating, setAverageRating] = useState(0);
 
-	var isAuth = false;
+	// var isAuth = false;
 	var token = localStorage.getItem("tokenStore");
-	if (token) isAuth = true;
+	// if (token) isAuth = true;
 
 	const getFeedbacks = async () => {
 		const res = await axios.get(
@@ -30,7 +30,7 @@ const GetFeedbacks = () => {
 
 	useEffect(() => {
 		getFeedbacks();
-	}, []);
+	});
 
 	return (
 		<div className='reports-page'>

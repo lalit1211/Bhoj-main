@@ -13,7 +13,7 @@ const CustomerOrders = () => {
 	var token = localStorage.getItem("tokenStore");
 	if (token) isAuth = true;
 
-	if (isAuth == true) {
+	if (isAuth === true) {
 		var decoded = jwt_decode(token);
 		var id = decoded.id;
 		var username = decoded.name;
@@ -33,7 +33,7 @@ const CustomerOrders = () => {
 
 	useEffect(() => {
 		getOrders();
-	}, []);
+	});
 
 	return (
 		<>

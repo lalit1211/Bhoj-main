@@ -18,7 +18,11 @@ const Card = (props) => {
 const Main = () => {
 	return (
 		<div className='main'>
-			<img src={LOGO} className='bhoj-logo' />
+			<img
+				src={LOGO}
+				className='bhoj-logo'
+				alt='logo'
+			/>
 			<h1>BHOJ Automation System (BOS)</h1>
 			<br />
 			<h3>(Select User Type)</h3>

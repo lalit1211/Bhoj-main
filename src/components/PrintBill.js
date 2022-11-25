@@ -17,14 +17,14 @@ const PrintBill = () => {
 
 	useEffect(() => {
 		getOrderDetails(billId);
-	}, []);
+	});
 
 	return (
 		<>
 			<div className='bill-container'>
 				<div className='bill-top'>
 					<div className='bill-top-left'>
-						<img src={LOGO} />
+						<img src={LOGO} alt='logo' />
 					</div>
 					<div className='bill-top-right'>
 						<h1>BHOJ</h1>

@@ -3,14 +3,14 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import "../App.css";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Payment from "./Payment";
 
 const CustomerCart = () => {
-	var isAuth = false;
+	// var isAuth = false;
 	var token = localStorage.getItem("tokenStore");
 	if (token) {
-		isAuth = true;
+		// isAuth = true;
 		var decoded = jwt_decode(token);
 		var userId = decoded.id;
 		var username = decoded.name;
@@ -19,7 +19,7 @@ const CustomerCart = () => {
 	const [genPayment, setGenPayment] = useState(false);
 	const PROCEED = "Proceed To Checkout 👉🏻";
 	const BACK = "Go Back";
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	const [totalAmount, setTotalAmount] = useState(50);
 
@@ -106,7 +106,7 @@ const CustomerCart = () => {
 
 	useEffect(() => {
 		getCart();
-	}, []);
+	});
 
 	return (
 		<>
@@ -159,6 +159,7 @@ const CustomerCart = () => {
 																	src={
 																		cartItem.img
 																	}
+																	alt='logo'
 																/>{" "}
 																<br />{" "}
 																{
@@ -227,7 +228,7 @@ const CustomerCart = () => {
 									</h3>
 									<br />
 									<br />
-									<a
+									<Link
 										onClick={() =>
 											setGenPayment(
 												!genPayment,
@@ -238,7 +239,7 @@ const CustomerCart = () => {
 										{genPayment
 											? BACK
 											: PROCEED}
-									</a>
+									</Link>
 								</div>
 							</div>
 						) : (
@@ -265,6 +266,6 @@ const CustomerCart = () => {
 			</div>
 		</>
 	);
-};
+};;
 
 export default CustomerCart;
